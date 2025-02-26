@@ -1,0 +1,15 @@
+    "custom/tidal": {
+        "exec": "mediaplayer.py --player tidal-hifi",
+        "format": " {}",
+        "rotate": ${r_deg},
+        "return-type": "json",
+        "on-click": "playerctl play-pause --player tidal-hifi",
+        "on-click-right": "playerctl next --player tidal-hifi",
+        "on-click-middle": "playerctl previous --player tidal-hifi",
+        "on-scroll-up": "volumecontrol.sh -p tidal-hifi i",
+        "on-scroll-down": "volumecontrol.sh -p tidal-hifi d",
+        "max-length": 25,
+        "escape": true,
+        "tooltip": true
+    },
+

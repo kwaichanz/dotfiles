@@ -157,4 +157,4 @@ export PATH=$PATH:$GOPATH/bin
 . "$HOME/.local/bin/env"
 
 alias lzd='lazydocker'
-export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')
+export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock

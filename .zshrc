@@ -126,6 +126,7 @@ export SUDO_EDITOR
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi=nvim
 alias vim=nvim
 alias lzg=lazygit
 fpath+=${ZDOTDIR:-~}/.zsh_functions

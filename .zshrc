@@ -158,3 +158,10 @@ export PATH=$PATH:$GOPATH/bin
 
 alias lzd='lazydocker'
 export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu select
+
+zstyle ':completion::complete:*' gain-privileges 1

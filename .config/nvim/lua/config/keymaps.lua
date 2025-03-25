@@ -86,3 +86,5 @@ end)
 vim.keymap.set("v", "<C-z>", function()
   vim.notify("no more accidental exit -b", "info")
 end)
+
+vim.keymap.set("v", "<leader>cn", ":CarbonNow<CR>", { silent = true })

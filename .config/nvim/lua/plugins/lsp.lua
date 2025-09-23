@@ -8,7 +8,9 @@ return {
         "luacheck",
         --     "shellcheck",
         "shfmt",
+        "tailwindcss",
         "tailwindcss-language-server",
+        "ts_ls",
         "typescript-language-server",
         "css-lsp",
         "gopls",
@@ -235,7 +237,9 @@ return {
           },
         },
       },
-      setup = {},
+      setup = {
+        automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
+      },
       config = function(_, opts)
         local lspconfig = require("lspconfig")
         for server, config in pairs(otps.servers) do

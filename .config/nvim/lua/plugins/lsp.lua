@@ -1,6 +1,6 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "stylua",
@@ -18,8 +18,8 @@ return {
   -- {
   --   "neovim/nvim-lspconfig",
   --   dependencies = {
-  --     "williamboman/mason.nvim",
-  --     "williamboman/mason-lspconfig.nvim",
+  --     "mason-org/mason.nvim",
+  --     "mason-org/mason-lspconfig.nvim",
   --     "hrsh7th/cmp-nvim-lsp",
   --     "hrsh7th/cmp-buffer",
   --     "hrsh7th/cmp-path",

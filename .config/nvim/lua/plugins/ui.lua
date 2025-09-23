@@ -54,6 +54,7 @@ return {
     opts = {
       options = {
         mode = "tabs",
+        -- style_preset = bufferline.style_preset.default,
         show_buffer_close_icons = false,
         show_close_icon = false,
       },

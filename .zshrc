@@ -94,6 +94,7 @@ dirhistory
 history
 jsontools
 fzf
+docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,7 +119,7 @@ export SUDO_EDITOR
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# Set personal ALIases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
@@ -157,7 +158,11 @@ export PATH=$PATH:$GOPATH/bin
 . "$HOME/.local/bin/env"
 
 alias lzd='lazydocker'
-export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+# export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+
+alias lzs='lazysql'
+
+alias ls='eza'
 
 autoload -Uz compinit
 compinit
@@ -165,3 +170,14 @@ compinit
 zstyle ':completion:*' menu select
 
 zstyle ':completion::complete:*' gain-privileges 1
+
+#eval "$(atuin init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/kw/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+

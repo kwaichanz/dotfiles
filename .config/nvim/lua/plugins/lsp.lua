@@ -10,10 +10,11 @@ return {
         "shfmt",
         "tailwindcss",
         "tailwindcss-language-server",
-        "ts_ls",
+        -- "ts_ls",
         "typescript-language-server",
         "css-lsp",
         "gopls",
+        "templ",
       })
     end,
   },
@@ -110,22 +111,28 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
 
-    init = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = {
-        "gd",
-        function()
-          -- DO NOT RESUSE WINDOW
-          require("telescope.builtin").lsp_definitions({ reuse_win = false })
-        end,
-        desc = "Goto Definition",
-        has = "definition",
-      }
-    end,
+    -- init = function()
+    -- NOTE: deprecated
+    -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- keys[#keys + 1] = {
+    --   "gd",
+    --   function()
+    --     -- DO NOT RESUSE WINDOW
+    --     require("telescope.builtin").lsp_definitions({ reuse_win = false })
+    --   end,
+    --   desc = "Goto Definition",
+    --   has = "definition",
+    -- }
+    -- end,
     opts = {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
+        ["*"] = {
+          keys = {
+            { "gd", "<cm> lua vim.lsp.buf.definition()<CR>", has = "definition" },
+          },
+        },
         cssls = {},
         tailwindcss = {
           root_dir = function(...)

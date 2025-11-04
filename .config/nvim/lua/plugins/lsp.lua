@@ -130,7 +130,7 @@ return {
       servers = {
         ["*"] = {
           keys = {
-            { "gd", "<cm> lua vim.lsp.buf.definition()<CR>", has = "definition" },
+            { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", has = "definition" },
           },
         },
         cssls = {},
@@ -249,9 +249,9 @@ return {
       },
       config = function(_, opts)
         local lspconfig = require("lspconfig")
-        for server, config in pairs(otps.servers) do
+        for server, config in pairs(opts.servers) do
           config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-          lspconfig[serever].setup(config)
+          lspconfig[server].setup(config)
         end
       end,
 
